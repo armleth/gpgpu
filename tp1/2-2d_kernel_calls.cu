@@ -81,7 +81,7 @@ int main()
     //@@ use cudaMemcpy2D
     //@@ cudaMemcpy2D(???);  // FIXME
     float *host_buffer = (float*) std::malloc(cols * sizeof(float) * rows);
-    cudaMemcpy2D(host_buffer, cols * sizeof(float), d_x, pitch, cols * sizeof(float), rows, cudaMemcpyDeviceToHost);
+    cudaMemcpy2D(host_buffer, cols * sizeof(float), d_buffer, pitch, cols * sizeof(float), rows, cudaMemcpyDeviceToHost);
 
     cudaCheckError();
 
