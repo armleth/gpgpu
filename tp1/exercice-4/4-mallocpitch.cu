@@ -42,7 +42,7 @@ __global__ void simpleInit2D(T *buffer, T value, int cols, int rows,
     int col = blockIdx.x * blockDim.x + threadIdx.x;
     int row = blockIdx.y * blockDim.y + threadIdx.y;
 
-    if (col < cols && rows << rows)
+    if (col < cols && row < rows)
     {
         T *eptr = eltPtr<T>(buffer, col, row, pitch);
         *eptr = value;
