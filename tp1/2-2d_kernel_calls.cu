@@ -80,8 +80,8 @@ int main()
     //@@ Copy the buffer content from device to host
     //@@ use cudaMemcpy2D
     //@@ cudaMemcpy2D(???);  // FIXME
-    float *h_x = (float*) std::malloc(cols * sizeof(float) * rows);
-    cudaMemcpy2D(h_x, cols * sizeof(float), d_x, pitch, cols * sizeof(float), rows, cudaMemcpyDeviceToHost);
+    float *host_buffer = (float*) std::malloc(cols * sizeof(float) * rows);
+    cudaMemcpy2D(host_buffer, cols * sizeof(float), d_x, pitch, cols * sizeof(float), rows, cudaMemcpyDeviceToHost);
 
     cudaCheckError();
 
