@@ -26,7 +26,7 @@ __global__ void add(int *a, int *b, int *c, int N, int M)
     //@@    int idx=IDX(i,j,M);  // keep this line
     //@@    c[idx] = a[idx] + b[idx];  // keep this line
     //@@  }
-    int i = blockIdx.i * blockDim.i + threadIdx.i;
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
     int j = blockIdx.y * blockDim.y + threadIdx.y;
 
     if (i < N && j < M)
