@@ -24,7 +24,7 @@ __device__ inline T *eltPtr(T *baseAddress, int col, int row, size_t pitch)
 {
     //@@  return (T*)((char*)baseAddress + ??? * ??? + ??? * sizeof(???));  //
     // FIXME
-    return (T *)((char *)baseAddress + row * pitch + col * sizeof(Y));
+    return (T *)((char *)baseAddress + row * pitch + col * sizeof(T));
 }
 
 // Simple vector initialization; element at index i receives value i.
